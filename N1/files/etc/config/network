@@ -11,6 +11,7 @@ config interface 'lan'
 	option ipaddr '192.168.10.99'
 	option gateway '192.168.10.1'
 	option delegate '0'
+        option ip6assign '64'
 
 config device
 	option name 'br-lan'
@@ -19,3 +20,10 @@ config device
 
 config globals 'globals'
 	option packet_steering '1'
+
+config interface 'lan6'
+	option proto 'dhcpv6'
+	option device '@lan'
+	option reqaddress 'try'
+	option reqprefix 'auto'
+	option ip6assign '64'
