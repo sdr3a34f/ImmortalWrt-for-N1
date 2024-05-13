@@ -10,11 +10,12 @@ config defaults
 
 config zone
 	option name 'lan'
-	list network 'lan'
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
 	option masq '1'
+	list network 'lan'
+	list network 'lan6'
 
 config include 'passwall'
 	option type 'script'
